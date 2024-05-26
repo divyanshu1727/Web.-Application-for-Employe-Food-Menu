@@ -1,0 +1,55 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Emp_Res.master.cs" Inherits="Emoloye__Resturant.Emp_Res" %>
+<%@ Register Src="~/Header.ascx" TagName="myhead" TagPrefix="aa"%>
+<%@ Register Src="~/Footer.ascx" TagName="myfoot" TagPrefix="aa"%>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <script src="jquery.js"></script>
+    <link href="menu.css" rel="stylesheet" />
+    <script src="menu.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <aa:myhead id="h1" runat="server"></aa:myhead>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                          <div id="menu">
+		                     <ul class="menu">
+                                 <li><a href="webEmploye.aspx"><span>Employe</span></a></li>
+			                     <li class="last"><a href="Resturant.aspx"><span>Resturant</span></a></li>                 
+			
+			                 </ul>
+	                       </div>
+
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td>
+                         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                         </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <aa:myfoot id="Myhead2" runat="server"></aa:myfoot>
+                    </td>
+                </tr>
+            </table>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,87 @@
+create database db2405
+use db2405
+create table tblcource
+(
+cid int primary key identity,
+cname varchar(20)
+)
+insert into tblcource(cname)values('B.Tech')
+insert into tblcource(cname)values('B.Sc')
+insert into tblcource(cname)values('M.Tec')
+select *from tblcource
+create table tblbran
+(
+bid int primary key identity,
+cid int,
+bname varchar(20)
+)
+insert into tblbran(cid,bname)values(1,'CS')
+insert into tblbran(cid,bname)values(1,'IT')
+insert into tblbran(cid,bname)values(1,'Civil')
+insert into tblbran(cid,bname)values(2,'Maths')
+insert into tblbran(cid,bname)values(2,'Agrigulture')
+insert into tblbran(cid,bname)values(2,'Biology')
+insert into tblbran(cid,bname)values(3,'AI & ML')
+insert into tblbran(cid,bname)values(3,'Full Stack Developer')
+insert into tblbran(cid,bname)values(3,'Cyber Security')
+select * from tblbran
+create table tbldetails
+(
+dit int primary key identity,
+name varchar(20),
+cid int,
+bid int,
+)
+select *from tbldetails
+join tblcource on tbldetails.cid=tblcource.cid join tblbran on tbldetails.bid=tblbran.bid
+
+
+
+----------------------resturant table-----------------------------
+
+create table tblfood
+(
+fid int primary key identity,
+fname varchar(20)
+)
+insert into tblfood(fname)values('Veg')
+insert into tblfood(fname)values('Non-Veg')
+select *from tblfood
+create table tblfoodtype
+(
+ftid int primary key identity,
+fid int,
+ftname varchar(20)
+)
+insert into tblfoodtype(fid,ftname)values(1,'Chilli Paneer')
+insert into tblfoodtype(fid,ftname)values(1,'Bati-Chokha')
+insert into tblfoodtype(fid,ftname)values(1,'Dal-Chawal')
+insert into tblfoodtype(fid,ftname)values(1,'Mushroom')
+insert into tblfoodtype(fid,ftname)values(2,'Chicken')
+insert into tblfoodtype(fid,ftname)values(2,'Mutton')
+insert into tblfoodtype(fid,ftname)values(2,'fish')
+insert into tblfoodtype(fid,ftname)values(2,'Egg')
+select *from tblfood
+select *from  tblfoodtype
+
+create table tblresturant
+(
+rid int primary key identity,
+name varchar(20),
+fid int,
+ftid int,
+)
+select *from tblresturant join tblfood on tblresturant.fid=tblfood.fid join tblfoodtype on tblresturant.ftid=tblfoodtype.ftid
+
+
+
+
+
+
+
+
+
+
+
+
+

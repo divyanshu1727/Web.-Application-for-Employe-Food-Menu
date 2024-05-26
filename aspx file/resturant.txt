@@ -1,0 +1,65 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/Emp_Res.Master" AutoEventWireup="true" CodeBehind="Resturant.aspx.cs" Inherits="Emoloye__Resturant.Resturant" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <table>
+        <tr>
+            <td>Employe Name</td>
+            <td><asp:TextBox ID="textname" runat="server"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Select Food</td>
+            <td><asp:DropDownList ID="ddlft" runat="server" OnSelectedIndexChanged="ddlft_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList></td>
+        </tr>
+         <tr>
+            <td>Category</td>
+             <td><asp:DropDownList ID="ddlcat" runat="server"></asp:DropDownList></td>
+        </tr>
+        
+         <tr>
+            <td></td>
+            <td><asp:Button ID="btninsert" runat="server" Text="INSERT" OnClick="btninsert_Click" /></td> 
+        </tr>
+        <tr>
+            <td></td>
+             <td><asp:GridView ID="gvresturant" runat="server" AutoGenerateColumns="false" OnRowCommand="gvresturant_RowCommand">
+                 <Columns>
+                     <asp:TemplateField HeaderText="ID">
+                         <ItemTemplate>
+                             <%# Eval("rid") %>
+                         </ItemTemplate>
+                     </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Name">
+                         <ItemTemplate>
+                             <%# Eval("name") %>
+                         </ItemTemplate>
+                     </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Food">
+                         <ItemTemplate>
+                             <%# Eval("fname") %>         
+                         </ItemTemplate>
+                     </asp:TemplateField>
+                      <asp:TemplateField HeaderText="Category">
+                         <ItemTemplate>
+                             <%# Eval("ftname") %>
+                         </ItemTemplate>
+                     </asp:TemplateField>
+                      <asp:TemplateField >
+                         <ItemTemplate>
+                             <asp:Button ID="btndelete" runat="server" Text="DELETE" CommandName="dlt" CommandArgument='<%# Eval("rid") %>' />
+                         </ItemTemplate>
+                     </asp:TemplateField>
+                     <asp:TemplateField >
+                         <ItemTemplate>
+
+                             <asp:Button ID="btnedit" runat="server" Text="EDIT" CommandName="edt" CommandArgument='<%# Eval("rid") %>' />
+
+                         </ItemTemplate>
+                     </asp:TemplateField>
+
+                 </Columns>
+                 </asp:GridView></td>
+        </tr>
+    </table>
+</asp:Content>
+

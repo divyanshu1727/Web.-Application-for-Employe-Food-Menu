@@ -1,0 +1,8 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Emoloye__Resturant.Header" %>
+<table>
+    <tr>
+        <td>
+            <asp:Image ID="image" runat="server" Height="350px" Width="1150px" ImageUrl="~/image11.jpg" />
+        </td>
+    </tr>
+</table>
